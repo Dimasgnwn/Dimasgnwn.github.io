@@ -18,30 +18,19 @@ window.onscroll = () => {
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky',window.scrollY > 100);
+    // remove toggle icon and navbar on scroll
+    menuIcon.classList.remove ('bx-x');
+    navbar.classList.remove ('active');
 };
 
-// const menuIcon = document.getElementById('menu-icon');
-// const navbar = document.querySelector('.navbar');
+//====== toggle menubar =====
 
-// function toggleMenu() {
-//   if (window.innerWidth <= 991) {
-//     // Jika lebar layar kurang dari atau sama dengan 991px
-//     menuIcon.textContent = ''; // Kosongkan isi ikon menu
-//     navbar.querySelectorAll('a').forEach(link => {
-//       menuIcon.appendChild(link); // Tambahkan setiap link ke dalam ikon menu
-//       menuIcon.classList.toggle('active');
-//     });
-//   } else {
-//     // Jika lebar layar lebih dari 991px
-//     navbar.appendChild(...menuIcon.childNodes); // Kembalikan semua link ke navbar
-//     menuIcon.textContent = 'bx bx-menu'; // Kembalikan ikon menu ke semula
-//   }
-// }
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-// // Panggil fungsi saat halaman dimuat dan setiap kali ukuran jendela berubah
-// window.addEventListener('load', toggleMenu);
-// window.addEventListener('resize', toggleMenu);
-// menuIcon.addEventListener('click', toggleMenu);
-
+menuIcon.onclick = () => { 
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
 
   
